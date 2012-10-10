@@ -2,8 +2,8 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Application.index
-
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+# this is the one you should use
+
+# This is only here to help the RemoteAssets compile since it self references it's routes.
+GET     /assets/*file               controllers.RemoteAssets.at(path="/public", file)
