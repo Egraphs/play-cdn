@@ -26,7 +26,7 @@ object RemoteAssets extends Controller {
   }
  
   def at(file: String) = {
-    val secure = Play.configuration.getString("cdn.secure").getOrElse("true").toBoolean // default is secure
+    val secure = Play.configuration.getBoolean("cdn.secure").getOrElse(true) // default is secure
     val httpOrHttps = if(secure) "https://" else "http://"
 
     val maybeContentUrl = Play.configuration.getString("cdn.contenturl")
